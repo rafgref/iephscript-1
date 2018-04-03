@@ -1,7 +1,6 @@
 #!/bin/bash
 #
-# Original script by Area 51 Reborn
-# Modified by Aiman Amir
+# Anonymous
 # =================================
 
 # initialisasi var
@@ -152,6 +151,14 @@ wget https://raw.githubusercontent.com/aimanamir/autoscript/master/ddos-deflate-
 unzip ddos-deflate-master.zip
 cd ddos-deflate-master
 ./install.sh
+
+# banner
+rm /etc/issue.net
+wget -O /etc/issue.net "https://raw.githubusercontent.com/Dreyannz/Deb7AutoScriptVPS/master/issue.net"
+sed -i 's@#Banner@Banner@g' /etc/ssh/sshd_config
+sed -i 's@DROPBEAR_BANNER=""@DROPBEAR_BANNER="/etc/issue.net"@g' /etc/default/dropbear
+service ssh restart
+service dropbear restart
 
 # download script
 cd /usr/bin
