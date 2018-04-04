@@ -27,7 +27,7 @@ sed -i 's/AcceptEnv/#AcceptEnv/g' /etc/ssh/sshd_config
 service ssh restart
 
 # set repo
-wget -O /etc/apt/sources.list "https://raw.githubusercontent.com/aimanamir/autoscript/master/sources.list.debian7"
+wget -O /etc/apt/sources.list "https://raw.githubusercontent.com/lujertech/autoscript/master/sources.list.debian7"
 wget "http://www.dotdeb.org/dotdeb.gpg"
 wget "http://www.webmin.com/jcameron-key.asc"
 cat dotdeb.gpg | apt-key add -;rm dotdeb.gpg
@@ -50,7 +50,7 @@ apt-get install neofetch
 
 echo "clear" >> .bashrc
 echo 'echo -e "Selamat datang ke server $HOSTNAME"' >> .bashrc
-echo 'echo -e "Script modified by Aiman Amir"' >> .bashrc
+echo 'echo -e "Script modified by LujerTech"' >> .bashrc
 echo 'echo -e "Ketik menu untuk menampilkan daftar perintah"' >> .bashrc
 echo 'echo -e ""' >> .bashrc
 
@@ -58,37 +58,37 @@ echo 'echo -e ""' >> .bashrc
 cd
 rm /etc/nginx/sites-enabled/default
 rm /etc/nginx/sites-available/default
-wget -O /etc/nginx/nginx.conf "https://raw.githubusercontent.com/aimanamir/autoscript/master/nginx.conf"
+wget -O /etc/nginx/nginx.conf "https://raw.githubusercontent.com/lujertech/autoscript/master/nginx.conf"
 mkdir -p /home/vps/public_html
-echo "<pre>Setup by Aiman Amir</pre>" > /home/vps/public_html/index.html
-wget -O /etc/nginx/conf.d/vps.conf "https://raw.githubusercontent.com/aimanamir/autoscript/master/vps.conf"
+echo "<pre>Setup by LujerTech</pre>" > /home/vps/public_html/index.html
+wget -O /etc/nginx/conf.d/vps.conf "https://raw.githubusercontent.com/lujertech/autoscript/master/vps.conf"
 service nginx restart
 
 # install openvpn
-wget -O /etc/openvpn/openvpn.tar "https://raw.githubusercontent.com/aimanamir/autoscript/master/openvpn-debian.tar"
+wget -O /etc/openvpn/openvpn.tar "https://raw.githubusercontent.com/lujertech/autoscript/master/openvpn-debian.tar"
 cd /etc/openvpn/
 tar xf openvpn.tar
-wget -O /etc/openvpn/1194.conf "https://raw.githubusercontent.com/aimanamir/autoscript/master/1194.conf"
+wget -O /etc/openvpn/1194.conf "https://raw.githubusercontent.com/lujertech/autoscript/master/1194.conf"
 service openvpn restart
 sysctl -w net.ipv4.ip_forward=1
 sed -i 's/#net.ipv4.ip_forward=1/net.ipv4.ip_forward=1/g' /etc/sysctl.conf
 iptables -t nat -I POSTROUTING -s 192.168.100.0/24 -o eth0 -j MASQUERADE
 iptables-save > /etc/iptables_yg_baru_dibikin.conf
-wget -O /etc/network/if-up.d/iptables "https://raw.githubusercontent.com/aimanamir/autoscript/master/iptables"
+wget -O /etc/network/if-up.d/iptables "https://raw.githubusercontent.com/lujertech/autoscript/master/iptables"
 chmod +x /etc/network/if-up.d/iptables
 service openvpn restart
 
 # konfigurasi openvpn
 cd /etc/openvpn/
-wget -O /etc/openvpn/client.ovpn "https://raw.githubusercontent.com/aimanamir/autoscript/master/client-1194.conf"
+wget -O /etc/openvpn/client.ovpn "https://raw.githubusercontent.com/lujertech/autoscript/master/client-1194.conf"
 sed -i $MYIP2 /etc/openvpn/client.ovpn;
 cp client.ovpn /home/vps/public_html/
 
 # install badvpn
 cd
-wget -O /usr/bin/badvpn-udpgw "https://raw.githubusercontent.com/aimanamir/autoscript/master/badvpn-udpgw"
+wget -O /usr/bin/badvpn-udpgw "https://raw.githubusercontent.com/lujertech/autoscript/master/badvpn-udpgw"
 if [ "$OS" == "x86_64" ]; then
-  wget -O /usr/bin/badvpn-udpgw "https://raw.githubusercontent.com/aimanamir/autoscript/master/badvpn-udpgw64"
+  wget -O /usr/bin/badvpn-udpgw "https://raw.githubusercontent.com/lujertech/autoscript/master/badvpn-udpgw64"
 fi
 sed -i '$ i\screen -AmdS badvpn badvpn-udpgw --listen-addr 127.0.0.1:7300' /etc/rc.local
 chmod +x /usr/bin/badvpn-udpgw
@@ -133,7 +133,7 @@ service fail2ban restart
 # install squid3
 cd
 apt-get -y install squid3
-wget -O /etc/squid3/squid.conf "https://raw.githubusercontent.com/aimanamir/autoscript/master/squid3.conf"
+wget -O /etc/squid3/squid.conf "https://raw.githubusercontent.com/lujertech/autoscript/master/squid3.conf"
 sed -i $MYIP2 /etc/squid3/squid.conf;
 service squid3 restart
 
@@ -147,14 +147,14 @@ service webmin restart
 
 # install ddos deflate
 apt-get -y install dnsutils dsniff
-wget https://raw.githubusercontent.com/aimanamir/autoscript/master/ddos-deflate-master.zip
+wget https://raw.githubusercontent.com/lujertech/autoscript/master/ddos-deflate-master.zip
 unzip ddos-deflate-master.zip
 cd ddos-deflate-master
 ./install.sh
 
 # banner
 rm /etc/issue.net
-wget -O /etc/issue.net "https://raw.githubusercontent.com/Dreyannz/Deb7AutoScriptVPS/master/issue.net"
+wget -O /etc/issue.net "https://raw.githubusercontent.com/lujertech/autoscript/master/issue.net"
 sed -i 's@#Banner@Banner@g' /etc/ssh/sshd_config
 sed -i 's@DROPBEAR_BANNER=""@DROPBEAR_BANNER="/etc/issue.net"@g' /etc/default/dropbear
 service ssh restart
@@ -162,26 +162,26 @@ service dropbear restart
 
 # download script
 cd /usr/bin
-wget -O menu "https://raw.githubusercontent.com/aimanamir/autoscript/master/menu.sh"
-wget -O usernew "https://raw.githubusercontent.com/aimanamir/autoscript/master/usernew.sh"
-wget -O trial "https://raw.githubusercontent.com/aimanamir/autoscript/master/trial.sh"
-wget -O hapus "https://raw.githubusercontent.com/aimanamir/autoscript/master/hapus.sh"
-wget -O cek "https://raw.githubusercontent.com/aimanamir/autoscript/master/user-login.sh"
-wget -O userlimit "https://raw.githubusercontent.com/aimanamir/autoscript/master/userlimit.sh"
-wget -O userlimitssh "https://raw.githubusercontent.com/aimanamir/autoscript/master/userlimitssh.sh"
-wget -O member "https://raw.githubusercontent.com/aimanamir/autoscript/master/user-list.sh"
-wget -O resvis "https://raw.githubusercontent.com/aimanamir/autoscript/master/resvis.sh"
-wget -O speedtest "https://raw.githubusercontent.com/aimanamir/autoscript/master/speedtest_cli.py"
-wget -O info "https://raw.githubusercontent.com/aimanamir/autoscript/master/info.sh"
-wget -O about "https://raw.githubusercontent.com/aimanamir/autoscript/master/about.sh"
+wget -O menu "https://raw.githubusercontent.com/lujertech/autoscript/master/menu.sh"
+wget -O usernew "https://raw.githubusercontent.com/lujertech/autoscript/master/usernew.sh"
+wget -O trial "https://raw.githubusercontent.com/lujertech/autoscript/master/trial.sh"
+wget -O delete "https://raw.githubusercontent.com/lujertech/autoscript/master/hapus.sh"
+wget -O check "https://raw.githubusercontent.com/lujertech/autoscript/master/user-login.sh"
+wget -O userlimit "https://raw.githubusercontent.com/lujertech/autoscript/master/userlimit.sh"
+wget -O userlimitssh "https://raw.githubusercontent.com/lujertech/autoscript/master/userlimitssh.sh"
+wget -O member "https://raw.githubusercontent.com/lujertech/autoscript/master/user-list.sh"
+wget -O resvis "https://raw.githubusercontent.com/lujertech/autoscript/master/resvis.sh"
+wget -O speedtest "https://raw.githubusercontent.com/lujertech/autoscript/master/speedtest_cli.py"
+wget -O info "https://raw.githubusercontent.com/lujertech/autoscript/master/info.sh"
+wget -O about "https://raw.githubusercontent.com/lujertech/autoscript/master/about.sh"
 
 echo "0 0 * * * root /sbin/reboot" > /etc/cron.d/reboot
 
 chmod +x menu
 chmod +x usernew
 chmod +x trial
-chmod +x hapus
-chmod +x cek
+chmod +x delete
+chmod +x check
 chmod +x member
 chmod +x resvis
 chmod +x speedtest
@@ -220,19 +220,19 @@ echo "nginx    : 81"  | tee -a log-install.txt
 echo ""  | tee -a log-install.txt
 echo "Script"  | tee -a log-install.txt
 echo "------"  | tee -a log-install.txt
-echo "menu         (Menampilkan daftar perintah yang tersedia)"  | tee -a log-install.txt
-echo "usernew      (Membuat Akun SSH)"  | tee -a log-install.txt
-echo "trial        (Membuat Akun Trial)"  | tee -a log-install.txt
-echo "hapus        (Menghapus Akun SSH)"  | tee -a log-install.txt
-echo "cek          (Cek User Login)"  | tee -a log-install.txt
-echo "member       (Cek Member SSH)"  | tee -a log-install.txt
+echo "menu         (Menu list)"  | tee -a log-install.txt
+echo "usernew      (New user SSH)"  | tee -a log-install.txt
+echo "trial        (Trial Account)"  | tee -a log-install.txt
+echo "delete       (Delete Account)"  | tee -a log-install.txt
+echo "check        (Check User Login)"  | tee -a log-install.txt
+echo "member       (Check Member SSH)"  | tee -a log-install.txt
 echo "userlimit    (Limit login Dropbear)"  | tee -a log-install.txt
 echo "userlimitssh (Limit login SSHD)"  | tee -a log-install.txt
 echo "resvis       (Restart Service dropbear, webmin, squid3, openvpn dan ssh)"  | tee -a log-install.txt
 echo "reboot       (Reboot VPS)"  | tee -a log-install.txt
 echo "speedtest    (Speedtest VPS)"  | tee -a log-install.txt
-echo "info         (Menampilkan Informasi Sistem)"  | tee -a log-install.txt
-echo "about        (Informasi tentang script auto install)"  | tee -a log-install.txt
+echo "info         (System Information)"  | tee -a log-install.txt
+echo "about        (About AutoScript)"  | tee -a log-install.txt
 echo ""  | tee -a log-install.txt
 echo "Fitur lain"  | tee -a log-install.txt
 echo "----------"  | tee -a log-install.txt
@@ -240,8 +240,8 @@ echo "Webmin   : http://$MYIP:10000/"  | tee -a log-install.txt
 echo "Timezone : Asia/Manila(GMT +7)"  | tee -a log-install.txt
 echo "IPv6     : [off]"  | tee -a log-install.txt
 echo ""  | tee -a log-install.txt
-echo "Original Script by Area 51 Reborn"  | tee -a log-install.txt
-echo "Modified by Aiman Amir"  | tee -a log-install.txt
+echo "===================="  | tee -a log-install.txt
+echo "===================="  | tee -a log-install.txt
 echo ""  | tee -a log-install.txt
 echo "Log Instalasi --> /root/log-install.txt"  | tee -a log-install.txt
 echo ""  | tee -a log-install.txt
