@@ -1,8 +1,7 @@
 # Autoscript Setup VPS
-Pertama sekali, aq nk ucap terima kasih kepada semua yg terlibat secara langsung atau tidak langsung dalam penghasilan autoscript installer ini.
-Script ini adlh versi upgraded, aq ad tambah sikit bberapa feature yg penting untuk berjualan SSH dan VPN.
+First of all, want to say thanks to all those involved directly or indirectly in this autoscript installer. This script is an upgraded version,
 
->Pastikan VPS korang masih lagi fresh dan belum install apa².
+>Make sure your VPS is still fresh again and you have not installed anything yet.
 
 # Feature
 - OpenSSH
@@ -17,18 +16,8 @@ Script ini adlh versi upgraded, aq ad tambah sikit bberapa feature yg penting un
 - BadVPN
 
 # Installation
-Copy paste script dibawah ke dalam VPS korang dan tekan 'ENTER'.
+Copy and paste the code below the hit "ENTER"
 
 `apt-get update && apt-get install ca-certificates && wget https://raw.githubusercontent.com/aimanamir/autoscript/master/debian7.sh && chmod +x debian7.sh && bash debian7.sh`
 
-Proses install ambil masa lebih kurang 5-6 minit untuk siap.
-
-# Support
-Kalau ad sebarang masalah dgn script ni, sila 'Pull Request'.
-Atau boleh pm aq dlm Telegram. Tq.
-
-# Contact me
-Telegram: [@NamiaKai](https://t.me/namiakai)
-
-# Donate
-PayPal: [aimanamir](https://paypal.me/aimanamir)
+The installation process takes about 5-6 minutes to complete.
