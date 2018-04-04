@@ -9,7 +9,7 @@ Pass=`</dev/urandom tr -dc a-f0-9 | head -c9`
 useradd -e `date -d "$hari days" +"%Y-%m-%d"` -s /bin/false -M $Login
 echo -e "$Pass\n$Pass\n"|passwd $Login &> /dev/null
 echo -e ""
-echo -e "====Trial SSH Account===="
+echo -e "====Trial SSH Account 1 Day===="
 echo -e "Host: $IP" 
 echo -e "Port OpenSSH: 22,143"
 echo -e "Port Dropbear: 80,443"
