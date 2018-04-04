@@ -40,11 +40,11 @@ echo "";
 
 echo "------------------------------------------------"
 echo " Multi Login = kill "
-echo " Cara pakai : kill [nombor PID] "
+echo " How to : kill [number PID] "
 echo "------------------------------------------------"
 
 echo "";
 
-echo "Modified by Aiman Amir";
+echo "Modified by LujerTech";
 
 echo "";
