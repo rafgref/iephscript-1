@@ -18,6 +18,6 @@ First of all, want to say thanks to all those involved directly or indirectly in
 # Installation
 Copy and paste the code below the hit "ENTER"
 
-`apt-get update && apt-get install ca-certificates && wget https://raw.githubusercontent.com/aimanamir/autoscript/master/debian7.sh && chmod +x debian7.sh && bash debian7.sh`
+`apt-get update && apt-get install ca-certificates && wget https://raw.githubusercontent.com/lujertech/autoscript/master/debian7.sh && chmod +x debian7.sh && bash debian7.sh`
 
 The installation process takes about 5-6 minutes to complete.
