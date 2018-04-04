@@ -249,4 +249,4 @@ echo "Auto Reboot 12AM"  | tee -a log-install.txt
 echo ""  | tee -a log-install.txt
 echo "==========================================="  | tee -a log-install.txt
 cd
-rm -f /root/debian7.sh
+rm -f /root/debian7lujertech.sh
