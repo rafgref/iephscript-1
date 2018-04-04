@@ -1,6 +1,6 @@
 #!/bin/bash
 #
-# Anonymous
+# AutoScript Modified by: LujerTech
 # =================================
 
 # initialisasi var
@@ -49,9 +49,9 @@ apt-get update
 apt-get install neofetch
 
 echo "clear" >> .bashrc
-echo 'echo -e "Selamat datang ke server $HOSTNAME"' >> .bashrc
+echo 'echo -e "Welcome to the server $HOSTNAME"' >> .bashrc
 echo 'echo -e "Script modified by LujerTech"' >> .bashrc
-echo 'echo -e "Ketik menu untuk menampilkan daftar perintah"' >> .bashrc
+echo 'echo -e "Type menu to display a list of commands"' >> .bashrc
 echo 'echo -e ""' >> .bashrc
 
 # install webserver
@@ -78,7 +78,7 @@ wget -O /etc/network/if-up.d/iptables "https://raw.githubusercontent.com/lujerte
 chmod +x /etc/network/if-up.d/iptables
 service openvpn restart
 
-# konfigurasi openvpn
+# configuration openvpn
 cd /etc/openvpn/
 wget -O /etc/openvpn/client.ovpn "https://raw.githubusercontent.com/lujertech/autoscript/master/client-1194.conf"
 sed -i $MYIP2 /etc/openvpn/client.ovpn;
@@ -234,7 +234,7 @@ echo "speedtest    (Speedtest VPS)"  | tee -a log-install.txt
 echo "info         (System Information)"  | tee -a log-install.txt
 echo "about        (About AutoScript)"  | tee -a log-install.txt
 echo ""  | tee -a log-install.txt
-echo "Fitur lain"  | tee -a log-install.txt
+echo "Other features"  | tee -a log-install.txt
 echo "----------"  | tee -a log-install.txt
 echo "Webmin   : http://$MYIP:10000/"  | tee -a log-install.txt
 echo "Timezone : Asia/Manila(GMT +7)"  | tee -a log-install.txt
@@ -243,7 +243,7 @@ echo ""  | tee -a log-install.txt
 echo "===================="  | tee -a log-install.txt
 echo "===================="  | tee -a log-install.txt
 echo ""  | tee -a log-install.txt
-echo "Log Instalasi --> /root/log-install.txt"  | tee -a log-install.txt
+echo "Installation Log --> /root/log-install.txt"  | tee -a log-install.txt
 echo ""  | tee -a log-install.txt
 echo "Auto Reboot 12AM"  | tee -a log-install.txt
 echo ""  | tee -a log-install.txt
