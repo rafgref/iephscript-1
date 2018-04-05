@@ -165,7 +165,7 @@ cd /usr/bin
 wget -O menu "https://raw.githubusercontent.com/lujertech/autoscript/master/menu.sh"
 wget -O usernew "https://raw.githubusercontent.com/lujertech/autoscript/master/usernew.sh"
 wget -O trial "https://raw.githubusercontent.com/lujertech/autoscript/master/trial.sh"
-wget -O delete "https://raw.githubusercontent.com/lujertech/autoscript/master/hapus.sh"
+wget -O delete "https://raw.githubusercontent.com/lujertech/autoscript/master/delete.sh"
 wget -O check "https://raw.githubusercontent.com/lujertech/autoscript/master/user-login.sh"
 wget -O userlimit "https://raw.githubusercontent.com/lujertech/autoscript/master/userlimit.sh"
 wget -O userlimitssh "https://raw.githubusercontent.com/lujertech/autoscript/master/userlimitssh.sh"
