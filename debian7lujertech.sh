@@ -139,10 +139,10 @@ service squid3 restart
 
 # install webmin
 cd
-wget -O webmin-current.deb "http://www.webmin.com/download/deb/webmin-current.deb"
-dpkg -i --force-all webmin-current.deb;
+wget -O webmin_1.881_all.deb "http://prdownloads.sourceforge.net/webadmin/webmin_1.881_all.deb"
+dpkg -i --force-all webmin_1.881_all.deb;
 apt-get -y -f install;
-rm /root/webmin-current.deb
+rm /root/webmin_1.881_all.deb
 service webmin restart
 
 # install ddos deflate
