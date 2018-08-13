@@ -1,6 +1,6 @@
 #!/bin/bash
 #
-# AutoScript Modified by: LujerTech
+# AutoScript Modified by: IEPH DEVELOPERS
 # =================================
 
 # initialisasi var
@@ -154,7 +154,7 @@ cd ddos-deflate-master
 
 # banner
 rm /etc/issue.net
-wget -O /etc/issue.net "https://raw.githubusercontent.com/lujertech/autoscript/master/issue.net"
+wget -O /etc/issue.net "https://raw.githubusercontent.com/iephdevs/iephscript/master/issue.net"
 sed -i 's@#Banner@Banner@g' /etc/ssh/sshd_config
 sed -i 's@DROPBEAR_BANNER=""@DROPBEAR_BANNER="/etc/issue.net"@g' /etc/default/dropbear
 service ssh restart
