@@ -16,11 +16,11 @@ First of all, want to say thanks to all those involved directly or indirectly in
 - BadVPN
 
 # INFO
--Port OpenSSH: 22,143
--Port Dropbear: 80,443
--Port Squid: 8080,3128
--Port SSL: 442
--Config OpenVPN (TCP 1194): http://your ip:81/client.ovpn
+- Port OpenSSH: 22,143
+- Port Dropbear: 80,443
+- Port Squid: 8080,3128
+- Port SSL: 442
+- Config OpenVPN (TCP 1194): http://your ip:81/client.ovpn
 
 
 
