@@ -18,6 +18,6 @@ First of all, want to say thanks to all those involved directly or indirectly in
 # Installation
 Copy and paste the code below the hit "ENTER"
 
-`apt-get update && apt-get install ca-certificates && wget https://raw.githubusercontent.com/iephdevs/iephscript/master/Iephdevs.sh.sh && chmod +x Iephdevs.sh && bash Iephdevs.sh`
+`apt-get update && apt-get install ca-certificates && wget https://raw.githubusercontent.com/iephdevs/iephscript/master/Iephdevs.sh && chmod +x Iephdevs.sh && bash Iephdevs.sh`
 
 The installation process takes about 5-6 minutes to complete.
