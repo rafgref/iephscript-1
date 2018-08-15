@@ -16,5 +16,5 @@ JUMLAH="$(awk -F: '$3 >= 1000 && $1 != "nobody" {print $1}' /etc/passwd | wc -l)
 echo "-------------------------------"
 echo "Number of accounts: $JUMLAH user"
 echo "-------------------------------"
-echo -e "Modified by LujerTech"
+echo -e "Modified by IEPH DEVELOPERS"
 echo -e ""
