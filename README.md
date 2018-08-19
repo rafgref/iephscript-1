@@ -25,9 +25,9 @@ First of all, want to say thanks to all those involved directly or indirectly in
 # Installation of SSH SITE
 
 
-apt-get update && apt-get install ca-certificates && wget https://raw.githubusercontent.com/iephdevs/iephscript/master/Iephsshsite.sh && chmod +x Iephsshsite.sh && bash Iephsshsite.sh`
 
 
+`apt-get update && apt-get install ca-certificates && wget https://raw.githubusercontent.com/iephdevs/iephscript/master/Iephdevs.sh && chmod +x Iephdevs.sh && bash Iephdevs.sh`
 
 
 
