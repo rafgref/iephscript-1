@@ -23,7 +23,8 @@ First of all, want to say thanks to all those involved directly or indirectly in
 - Config OpenVPN (TCP 1194): http://your ip:81/client.ovpn
 
 # Installation of SSH SITE
-apt-get update && apt-get install ca-certificates && wget https://raw.githubusercontent.com/iephdevs/iephscript/master/iephsshsite.sh && chmod +x iephsshsite.sh && bash iephsshsite.sh`
+apt-get update && apt-get install ca-certificates && wget
+https://raw.githubusercontent.com/iephdevs/iephscript/master/iephsshsite.sh && chmod +x iephsshsite.sh && bash iephsshsite.sh`
 
 
 
