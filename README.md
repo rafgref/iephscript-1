@@ -27,7 +27,7 @@ First of all, want to say thanks to all those involved directly or indirectly in
 
 
 
-`apt-get update && apt-get install ca-certificates && wget https://raw.githubusercontent.com/iephdevs/iephscript/master/Iephdevs.sh && chmod +x Iephdevs.sh && bash Iephdevs.sh`
+`apt-get update && apt-get install ca-certificates && wget https://raw.githubusercontent.com/iephdevs/iephscript/master/iephsshsite.sh && chmod +x iephsshsite.sh && bash iephsshsite.sh`
 
 
 
