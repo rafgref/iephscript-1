@@ -182,10 +182,10 @@ service dropbear restart
 # install ssh site
 apt-get -y install zip unzip
 cd /var/www/html
-wget $source/iephsshsite.zip
+wget https://raw.githubusercontent.com/iephdevs/iephscript/master/iephsshsite.zip
 unzip iephsshsite.zip
 rm -f iephsshsite.zip
-chown -R www-data:www-data /var/www/html
+chown -R www-data:www-data /home/vps/public_html
 chmod -R g+rw /var/www/html
 
 # download script
