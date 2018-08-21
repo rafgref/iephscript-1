@@ -185,7 +185,7 @@ cd /var/www/html
 wget https://raw.githubusercontent.com/iephdevs/iephscript/master/iephsshsite.zip
 unzip iephsshsite.zip
 rm -f iephsshsite.zip
-chown -R www-data:www-data /home/vps/public_html
+chown -R www-data:www-data /var/www/html
 chmod -R g+rw /var/www/html
 
 # download script
